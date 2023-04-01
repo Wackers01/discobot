@@ -7,8 +7,8 @@ const client = new Client({
 });
 
 const webhookClient = new WebhookClient(
-    process.env.WEBHOOK_ID,
-    process.env.WEBHOOK_TOKEN
+    config['webhookId'],
+    config['webhookToken']
 );
 
 const commands = {
@@ -23,15 +23,15 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', async message => {
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+    if (!message.content.startsWith(config['prefix']) || message.author.bot) return;
 
-    const [command, ...args] = message.content.slice(config.prefix.length).trim().split(/ +/);
+    const [command, ...args] = message.content.slice(config['prefix'].length).trim().split(/ +/);
 
     try {
         if (command in commands) {
             await commands[command](message, args, webhookClient);
         } else {
-            message.channel.send(`Unknown command. Use \`${config.prefix}help\` to see available commands.`);
+            message.channel.send(`Unknown command. Use \`${config['prefix']}help\` to see available commands.`);
         }
     } catch (error) {
         console.error(error);
@@ -39,4 +39,4 @@ client.on('messageCreate', async message => {
     }
 });
 
-client.login(config.discord_token);
+client.login(config['discord_token']);
