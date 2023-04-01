@@ -1,0 +1,11 @@
+##Unreleased
+- Added
+- Index.js
+- Config.json
+- Packages installed from NPM
+- discord.js & googleapis Installed
+- Commands Folder
+    - Help.js
+    - Fact.js
+    - Joke.js
+    - Search.js
