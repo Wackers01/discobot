@@ -1,0 +1,23 @@
+{
+  "name": "discobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "disco_test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wackers01/discobot.git"
+  },
+  "author": "Timothy Waclawik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wackers01/discobot/issues"
+  },
+  "homepage": "https://github.com/Wackers01/discobot#readme",
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "googleapis": "^114.0.0"
+  }
+}

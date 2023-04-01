@@ -1,0 +1,7 @@
+{
+  "prefix": "!",
+  "discordToken": "your-discord-bot-token-goes-here",
+  "youtubeApiKey": "your-youtube-api-key-goes-here",
+  "webhookId": "your-youtube-api-key-goes-here",
+  "webhookToken": "your-youtube-api-key-goes-here"
+}
