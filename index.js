@@ -1,9 +1,16 @@
 require('dotenv').config();
-const { Client, Intents, WebhookClient } = require('discord.js');
+const { Client, GatewayIntentBits, WebhookClient } = require('discord.js');
 const config = require('./config.json');
 
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.MessageContent,
+    ],
+    token: config.discordToken,
 });
 
 const webhookClient = new WebhookClient(
@@ -39,4 +46,4 @@ client.on('messageCreate', async message => {
     }
 });
 
-client.login(config['discord_token']);
+client.login(config['discordToken']);
